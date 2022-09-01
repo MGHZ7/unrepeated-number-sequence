@@ -1,0 +1,19 @@
+{
+  "name": "mahzooz",
+  "version": "1.0.0",
+  "description": "A number generator that can generates mahzooz sequence of numbers that can not be repeated",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MGHZ7/unrepeated-number-sequence.git"
+  },
+  "author": "MGHZ",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MGHZ7/unrepeated-number-sequence/issues"
+  },
+  "homepage": "https://github.com/MGHZ7/unrepeated-number-sequence#readme"
+}
