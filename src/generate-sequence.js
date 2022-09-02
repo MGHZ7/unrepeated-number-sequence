@@ -19,7 +19,7 @@ module.exports = class SequenceGenerator {
         //console.log(this.length, this.minNumber, this.maxNumber);
 
         for (let i = this.minNumber; i <= this.maxNumber; i++) {
-            this.generateFor(i, []);
+            this.generateFor(i, [i]);
         }
     }
 
@@ -29,13 +29,14 @@ module.exports = class SequenceGenerator {
             return;
         }
 
-        if (this.maxNumber - number + 1 < this.length - array.length) {
+        if (this.maxNumber + 1 - number < this.length - array.length) {
+            console.log();
             return;
         }
 
-        for (let i = number; i < this.maxNumber; i++) {
+        for (let i = number + 1; i <= this.maxNumber; i++) {
             array.push(i);
-            this.generateFor(i + 1, [...array]);
+            this.generateFor(i, [...array]);
             array.pop();
         }
     }

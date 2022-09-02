@@ -2,13 +2,15 @@ const SequenceGenerator = require("./src/generate-sequence");
 const ExcelHandler = require("./src/excel-handler");
 
 const tasks = [];
-const sequenceOf4Generator = new SequenceGenerator(4, 1, 50);
+const sequenceOf4Generator = new SequenceGenerator(5, 1, 50);
 
 const generation1 = sequenceOf4Generator.generate();
 generation1
     .then(() => {
-        const sheetName = "4 Numbers";
+        const sheetName = "5 Numbers";
         const result = sequenceOf4Generator.result;
+
+        console.log(result.length);
 
         const writeHandler = handleResult(result, sheetName);
         return writeHandler;
@@ -22,7 +24,7 @@ async function handleResult(result, sheetName) {
     while (result.length) {
         const excelHandler = new ExcelHandler();
         excelHandler.addWorksheet(sheetName);
-        excelHandler.addRows(result.splice(0, 500000));
+        excelHandler.addRows(result.splice(0, 200000));
         await excelHandler.writeToFileStream();
         console.log("Write file");
     }

@@ -18,7 +18,7 @@ module.exports = class ExcelHandler {
         this.workbook = ExcelHandler.createWorkbook();
         this.counter = ExcelHandler.counter++;
         this.fileStream = fs.createWriteStream(
-            `${__dirname}/excel/file-of-4-${this.counter}.xlsx`
+            `${__dirname}/excel/file-of-${this.length}-${this.counter}.xlsx`
         );
     }
 
