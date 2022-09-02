@@ -18,7 +18,7 @@ module.exports = class SequenceGenerator {
     async generate() {
         //console.log(this.length, this.minNumber, this.maxNumber);
 
-        for (let i = this.minNumber; i < this.maxNumber; i++) {
+        for (let i = this.minNumber; i <= this.maxNumber; i++) {
             this.generateFor(i, []);
         }
     }
@@ -29,7 +29,7 @@ module.exports = class SequenceGenerator {
             return;
         }
 
-        if (this.maxNumber - number < array.length - this.length) {
+        if (this.maxNumber - number + 1 < this.length - array.length) {
             return;
         }
 
